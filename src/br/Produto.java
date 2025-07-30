@@ -17,7 +17,7 @@ public class Produto {
   public boolean vender(int quantidade){
     if(quantidade > 0 && quantidade <= this.quantidade) {
       this.quantidade -= quantidade;
-      return false;
+      return true;
     } else {
       System.out.println("Quantidade insuficiente em estoque para venda.");
       return false;
@@ -27,8 +27,11 @@ public class Produto {
   public void exibirResumo(){
     System.out.println("Produto: " + this.nome);
     System.out.printf("Preço: R$ %.2f\n", this.preco);
-    System.out.println("Quantidade em estoque: " + this.quantidade + " unidades.");
+    System.out.println( "Venda realizada com sucesso!");
+    System.out.println("Quantidade em estoque disponiveis para vendas são: " + this.quantidade + "  unidades.");
+
   }
+
 
   //CONSTRUTOR ALL
   public Produto(String nome, double preco, int quantidade) {
