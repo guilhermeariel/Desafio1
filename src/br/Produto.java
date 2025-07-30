@@ -28,7 +28,8 @@ public class Produto {
     System.out.println("Produto: " + this.nome);
     System.out.printf("Preço: R$ %.2f\n", this.preco);
     System.out.println( "Venda realizada com sucesso!");
-    System.out.println("Quantidade em estoque de " + this.nome + " disponiveis para vendas são: " + this.quantidade + "  unidades.");
+    System.out.println("Há " + this.quantidade + " unidades do produto " + this.nome + " disponíveis para venda.");
+
 
   }
 
