@@ -5,18 +5,18 @@ public class Produto {
   //ATRIBUTOS
   private String nome;
   private double preco;
-  private int quantidade;
+  private int estoque;
 
   //METODOS PUBLICOS
-  public void adicionarQuantidade(int quantidade) {
+  public void adicionarEstoque(int quantidade) {
     if (quantidade > 0) {
-      this.quantidade += quantidade;
+      this.estoque += quantidade;
     }
   }
 
   public boolean vender(int quantidade){
-    if(quantidade > 0 && quantidade <= this.quantidade) {
-      this.quantidade -= quantidade;
+    if(quantidade > 0 && quantidade <= this.estoque) {
+      this.estoque -= quantidade;
       return true;
     } else {
       System.out.println("Quantidade insuficiente em estoque para venda.");
@@ -28,24 +28,23 @@ public class Produto {
     System.out.println("Produto: " + this.nome);
     System.out.printf("Preço: R$ %.2f\n", this.preco);
     System.out.println( "Venda realizada com sucesso!");
-    System.out.println("Há " + this.quantidade + " unidades do produto " + this.nome + " disponíveis para venda.");
+    System.out.println("Há " + this.estoque + " unidades do produto " + this.nome + " disponíveis para venda.");
 
 
   }
 
-
   //CONSTRUTOR ALL
-  public Produto(String nome, double preco, int quantidade) {
+  public Produto(String nome, double preco, int estoque) {
     this.nome = nome;
     this.preco = preco;
-    this.quantidade = quantidade;
+    this.estoque = estoque;
   }
 
   //CONSTRUTOR NOME PRECO
   public Produto(String nome, double preco) {
     this.nome = nome;
     this.preco = preco;
-    this.quantidade = 0;
+    this.estoque = 0;
   }
 
   //GETTETS SETTERS
@@ -66,10 +65,10 @@ public class Produto {
   }
 
   public int getQuantidade() {
-    return quantidade;
+    return this.estoque;
   }
 
   public void setQuantidade(int quantidade) {
-    this.quantidade = quantidade;
+    this.estoque = quantidade;
   }
 }
